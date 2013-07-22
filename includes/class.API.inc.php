@@ -30,14 +30,14 @@ class API
 		global $cache;
 		if (isset($cache))
 		{
-			
+
 			$api_keys = $cache->retrieve('api_keys');
 			if ($api_keys !== FALSE)
 			{
 				$this->all_keys = $api_keys;
 				return TRUE;
 			}
-			
+
 		}
 
 		/*
@@ -396,9 +396,9 @@ class API
 		global $cache;
 		if (isset($cache))
 		{
-			
+
 			$cache->erase('api_keys');
-			
+
 		}
 
 		return TRUE;
