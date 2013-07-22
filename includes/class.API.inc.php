@@ -68,10 +68,12 @@ class API
 		/*
 		 * If no API keys have been registered.
 		 */
+/*
 		if ($result->numRows() == 0)
 		{
 			return TRUE;
 		}
+*/
 		
 		/*
 		 * If API keys have been registered, iterate through them and store them.
@@ -238,7 +240,7 @@ class API
 		}
 		if (!empty($this->url))
 		{
-			$sql .= ', url=' . $db->quote($this->url)
+                        $sql .= ', url=' . $db->quote($this->url);
 		}
 		
 		/*

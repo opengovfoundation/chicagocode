@@ -17,6 +17,8 @@
  *
  */
 
+require $_SERVER['DOCUMENT_ROOT'].'/../includes/page-head.inc.php';
+
 /*
  * Fire up our templating engine.
  */
