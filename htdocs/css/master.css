@@ -392,6 +392,11 @@ div#search input[type="search"] {
 	margin: 0;
 }
 
+input[type="email"]{
+	-webkit-appearance: searchfield;
+	-moz-appearance: searchfield;
+}
+
 section#user_actions {
 	float: right;
 	font-family: Verdana, Arial, sans-serif;

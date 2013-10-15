@@ -70,6 +70,14 @@
 		
 			<section id="sidebar">
 			{{sidebar}}
+				<section>
+					<h1>Stay Updated</h1>
+					<label for="email">Email:</label>
+					<input id="signup-email" name="email" type="email" placeholder="Email">
+					<br />
+					<input id="stay-updated" type="button" value="Submit" />
+					<div id="submit_response"></div>
+				</section>
 			</section>
 		
 			{{body}}
@@ -85,5 +93,6 @@
 		{{javascript}}
 	</script>
 	<script src="/js/jquery.qtip.min.js"></script>
+	<script src="/js/master.js"></script>
 </body>
 </html>
