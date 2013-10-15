@@ -65,6 +65,7 @@ after "deploy:finalize_update" do
   run "chmod g+rw #{release_path}/htdocs/admin/data"
   run "chmod g+rw #{release_path}/htdocs/sitemap.xml"
   run "chmod g+rw #{release_path}/htdocs/.htaccess"
+
 end
 
 # Setup the shared folders.  Since we don't symlink these directly,
