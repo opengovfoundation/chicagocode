@@ -333,9 +333,13 @@ header h1 {
 		}
 
 header h2 {
-	background: transparent url('/images/templates/default/h2_tagline.png') no-repeat top left;
-	height: 59px;
-	width: 415px;
+	color: #555;
+	font-family: "Hoefler Text", Baskerville, Garamond, "Palatino Linotype", Georgia, "Times New Roman", serif;
+	font-size: 1.2em;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	font-weight: normal;
+	margin-bottom: 20px;
 }
 
 header nav#main_navigation {
