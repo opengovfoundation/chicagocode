@@ -5,7 +5,7 @@
  *
  * Displays a list of the top-level structural units. May be customized to display introductory
  * text, sidebar content, etc.
- * 
+ *
  * PHP version 5
  *
  * @author		Waldo Jaquith <waldo at jaquith.org>
@@ -39,6 +39,19 @@ $body = '';
  */
 $sidebar = '
 	<section>
+	<h1>Welcome</h1>
+	<p>
+		ChicagoCode.org provides the Chicago Municipal Code and Ordinances on one
+		friendly website. No copyright restrictions, a modern API and all of the
+		niceties of modern website design. It&rsquo;s like the expensive software
+		lawyers use, but free and wonderful.
+	</p>
+	<p>
+		This is a public beta test of ChicagoCode.org, which is to say that everything
+		is under development. Things may be funny looking, broken, and generally under
+		development right now.
+	</p>
+
 	<p>Powered by <a href="http://www.statedecoded.com/">The State Decoded</a>.</p>
 	</section>';
 

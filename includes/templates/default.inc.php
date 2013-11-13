@@ -20,10 +20,10 @@
 	{{inline_css}}
 	<!-- CSS: Generic print styles -->
 	<!--<link rel="stylesheet" media="print" href="/css/print.css"/>-->
-	
+
 	<!-- For the less-enabled mobile browsers like Opera Mini -->
 	<!--<link rel="stylesheet" media="handheld" href="/css/handheld.css"/>-->
-	
+
 	<!-- Make MSIE play nice with HTML5 & Media Queries -->
 	<script src="/js/modernizr.custom.23612.js"></script>
 	<script src="/js/respond.min.js"></script>
@@ -61,13 +61,13 @@
 			<nav id="breadcrumbs">
 				{{breadcrumbs}}
 			</nav>
-		
+
 			<nav id="intercode">
 				{{intercode}}
 			</nav> <!-- // #intercode -->
 
 			<h1>{{page_title}}</h1>
-		
+
 			<section id="sidebar">
 			{{sidebar}}
 				<section>
@@ -78,14 +78,30 @@
 					<input id="stay-updated" type="button" value="Submit" />
 					<div id="submit_response"></div>
 				</section>
+				<section>
+					<p style="margin-top:15px;">Want to open your city or state?  Click <a href="mailto:sayhello@opengovfoundation.org?Subject=Help%20Open%20My%20City%20or%20State">here!</a></p>
+				</section>
 			</section>
-		
+
 			{{body}}
-		
+
 		</section> <!-- // #page -->
-  
+
 		<footer id="page_footer">
-			<p>Powered by <a href="http://www.statedecoded.com/">The State Decoded</a>.</p>
+			<p>
+				<a href="/downloads/">Bulk Downloads</a>&nbsp;|
+				Copyright 2013 the <a href="http://opengovfoundation.org/">OpenGov
+				Foundation</a>. Design by <a href="http://www.boboroshi.com/">John
+				Athayde</a>. Powered by <a href="http://www.statedecoded.com/">The State
+				Decoded</a>. All user-contributed content is, of course, owned by its authors.
+				The municipal code is owned by the citizens of Chicago and, consequently, it
+				is not governed by copyright&mdash;so do whatever you want with it! The
+				information on this website does not constitute legal advice&mdash;nobody here
+				is acting as your attorney, and nothing that you read here is a substitute for
+				a competent attorney. OpenGov makes no guarantee that this information is
+				accurate or up-to-date, although we try our best. Seriously, OpenGov is not
+				your attorney. Heck, we&rsquo;re not attorneys at all.
+			</p>
 		</footer>
 	</div>
 	{{javascript_files}}
