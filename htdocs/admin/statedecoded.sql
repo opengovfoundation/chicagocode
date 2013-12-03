@@ -3,6 +3,7 @@
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
+DROP TABLE IF EXISTS `api_keys`;
 CREATE TABLE IF NOT EXISTS `api_keys` (
   `id` smallint(5) unsigned NOT NULL auto_increment,
   `api_key` char(16) collate utf8_bin NOT NULL,
@@ -19,6 +20,7 @@ CREATE TABLE IF NOT EXISTS `api_keys` (
   KEY `verified` (`verified`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
 
+DROP TABLE IF EXISTS `dictionary`;
 CREATE TABLE IF NOT EXISTS `dictionary` (
   `id` mediumint(8) unsigned NOT NULL auto_increment,
   `law_id` int(10) unsigned NOT NULL,
@@ -37,6 +39,7 @@ CREATE TABLE IF NOT EXISTS `dictionary` (
   KEY `scope_specificity` (`scope_specificity`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Terms and definitions scraped from laws';
 
+DROP TABLE IF EXISTS `dictionary_general`;
 CREATE TABLE IF NOT EXISTS `dictionary_general` (
   `id` smallint(5) unsigned NOT NULL auto_increment,
   `term` varchar(64) character set utf8 collate utf8_bin NOT NULL,
@@ -47,6 +50,7 @@ CREATE TABLE IF NOT EXISTS `dictionary_general` (
   UNIQUE KEY `term` (`term`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Glossary of generally applicable legal terms';
 
+DROP TABLE IF EXISTS `editions`;
 CREATE TABLE IF NOT EXISTS `editions` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `name` varchar(32) collate utf8_bin NOT NULL,
@@ -61,6 +65,7 @@ CREATE TABLE IF NOT EXISTS `editions` (
   KEY `order_by` (`order_by`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='An entry for every revision of the legal code';
 
+DROP TABLE IF EXISTS `laws`;
 CREATE TABLE IF NOT EXISTS `laws` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `structure_id` smallint(3) unsigned default NULL COMMENT 'The containing structure',
@@ -79,6 +84,7 @@ CREATE TABLE IF NOT EXISTS `laws` (
   KEY `order_by` (`order_by`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
 
+DROP TABLE IF EXISTS `laws_meta`;
 CREATE TABLE IF NOT EXISTS `laws_meta` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `law_id` int(11) NOT NULL,
@@ -92,6 +98,7 @@ CREATE TABLE IF NOT EXISTS `laws_meta` (
   KEY `meta_value_short` (`meta_value`(8))
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin  COMMENT='Storage of additional data specific to laws.';
 
+DROP TABLE IF EXISTS `laws_references`;
 CREATE TABLE IF NOT EXISTS `laws_references` (
   `id` int(3) unsigned NOT NULL auto_increment,
   `law_id` int(10) unsigned NOT NULL,
@@ -106,6 +113,7 @@ CREATE TABLE IF NOT EXISTS `laws_references` (
   KEY `target_section_number` (`target_section_number`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Mentions of laws within the text of other laws';
 
+DROP TABLE IF EXISTS `laws_views`;
 CREATE TABLE IF NOT EXISTS `laws_views` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `section` varchar(16) collate utf8_bin NOT NULL,
@@ -116,6 +124,7 @@ CREATE TABLE IF NOT EXISTS `laws_views` (
   KEY `section_2` (`section`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
 
+DROP TABLE IF EXISTS `permalinks`;
 CREATE TABLE IF NOT EXISTS `permalinks` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `object_type` varchar(10) NOT NULL,
@@ -130,6 +139,7 @@ CREATE TABLE IF NOT EXISTS `permalinks` (
   KEY `url` (`url`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin  COMMENT='Lookup table of all urls and identifiers for laws and sections';
 
+DROP TABLE IF EXISTS `structure`;
 CREATE TABLE IF NOT EXISTS `structure` (
   `id` smallint(5) unsigned NOT NULL auto_increment,
   `edition_id` int(10) unsigned NOT NULL COMMENT 'The release of the legal code to which this law belongs',
@@ -149,6 +159,7 @@ CREATE TABLE IF NOT EXISTS `structure` (
   KEY `parent_id` (`parent_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Titles, chapters, parts, articles, etc.';
 
+DROP TABLE IF EXISTS `tags`;
 CREATE TABLE IF NOT EXISTS `tags` (
   `id` mediumint(8) unsigned NOT NULL auto_increment,
   `law_id` mediumint(8) unsigned NOT NULL,
@@ -160,6 +171,7 @@ CREATE TABLE IF NOT EXISTS `tags` (
   KEY `text` (`text`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Terms that optionally describe each law.';
 
+DROP TABLE IF EXISTS `text`;
 CREATE TABLE IF NOT EXISTS `text` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `law_id` int(10) unsigned NOT NULL,
@@ -173,6 +185,7 @@ CREATE TABLE IF NOT EXISTS `text` (
   KEY `sequence` (`sequence`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Each subsection of text for each law';
 
+DROP TABLE IF EXISTS `text_sections`;
 CREATE TABLE IF NOT EXISTS `text_sections` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `text_id` int(10) unsigned NOT NULL,
