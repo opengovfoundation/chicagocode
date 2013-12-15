@@ -139,6 +139,13 @@ CREATE TABLE IF NOT EXISTS `permalinks` (
   KEY `url` (`url`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin  COMMENT='Lookup table of all urls and identifiers for laws and sections';
 
+CREATE TABLE `settings` (
+  `name` varchar(128) collate utf8_bin NOT NULL,
+  `value` varchar(128) collate utf8_bin NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY  (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
 DROP TABLE IF EXISTS `structure`;
 CREATE TABLE IF NOT EXISTS `structure` (
   `id` smallint(5) unsigned NOT NULL auto_increment,
