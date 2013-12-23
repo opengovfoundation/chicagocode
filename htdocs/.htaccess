@@ -20,6 +20,11 @@ RewriteRule ^(.*\.json)$ /downloads/current/code-json/$1 [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/downloads/current/code-xml%{REQUEST_URI} -f
+RewriteRule ^(.*\.xml)$ /downloads/current/code-xml/$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([^/]+)/(.*?\.json)$ /downloads/$1/code-json/$2 [L]
 
 RewriteRule ^index\.php$ - [L]
