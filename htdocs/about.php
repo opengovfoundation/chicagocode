@@ -78,7 +78,7 @@ always good to consult with a lawyer when interpreting the law.
 <h2>API</h2>
 <p>
 	The site has a RESTful, JSON-based API. <a
-href="http://chicagocode.org/downloads/">Register for an API key</a>&nbsp;and <a
+href="/downloads/">Register for an API key</a>&nbsp;and <a
 href="https://github.com/statedecoded/statedecoded/wiki/API-Documentation">
 read the documentation</a>&nbsp;for details.
 </p>
