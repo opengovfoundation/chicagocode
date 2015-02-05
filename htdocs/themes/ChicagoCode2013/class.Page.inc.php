@@ -16,7 +16,7 @@
 
 class ChicagoCode2013__Page extends Page
 {
-	public $theme_name = 'StateDecoded2013';
+	public $theme_name = 'ChicagoCode2013';
 
 	public $assets = array(
 		'font_awesome_css' => array(
@@ -26,7 +26,7 @@ class ChicagoCode2013__Page extends Page
 		'main_css' => array(
 			'path' => '/css/application.css',
 			'type' => 'css',
-			'requires' => array('font_awesome_css')
+			'requires' => array('font_awesome_css', 'datatables_css')
 		),
 		'jquery_ui_css' => array(
 			'path' => '//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css',
@@ -43,7 +43,7 @@ class ChicagoCode2013__Page extends Page
 			'requires' => array('jquery')
 		),
 		'jquery_qtip' => array(
-			'path' => '//cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/jquery.qtip.min.js',
+			'path' => '//cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.js',
 			'type' => 'javascript',
 			'requires' => array('jquery')
 		),
@@ -78,10 +78,20 @@ class ChicagoCode2013__Page extends Page
 			'path' => '/js/vendor/masonry.pkgd.min.js',
 			'type' => 'javascript'
 		),
+		'datatables' => array(
+			'path' => '//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js',
+			'type' => 'javascript',
+			'requires' => array('jquery')
+		),
+		'datatables_css' => array(
+			'path' => '//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css',
+			'type' => 'css',
+			'requires' => array('datatables')
+		),
 		'main_js' => array(
 			'path' => '/js/vendor/functions.js',
 			'type' => 'javascript',
-			'requires' => array('jquery', 'jquery_zclip', 'mousetrap', 'jquery_qtip')
+			'requires' => array('jquery', 'jquery_zclip', 'mousetrap', 'jquery_qtip', 'datatables')
 		),
 		'uservoice' => array(
 			'path' => '/js/vendor/uservoice.js',
@@ -211,4 +221,8 @@ class ChicagoCode2013__Page extends Page
 
 		$content->set('css', join("\n", $stylesheets));
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> Adding theme files.
