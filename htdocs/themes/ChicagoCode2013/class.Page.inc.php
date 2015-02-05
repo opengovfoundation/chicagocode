@@ -221,8 +221,4 @@ class ChicagoCode2013__Page extends Page
 
 		$content->set('css', join("\n", $stylesheets));
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> Adding theme files.

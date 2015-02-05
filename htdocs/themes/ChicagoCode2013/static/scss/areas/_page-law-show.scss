@@ -168,7 +168,7 @@
 
     float: right;
     padding: 20px;
-    width: 44%;
+    width: 39%;
 
     @include respond-to(smartphone) {
       float: none;
@@ -353,6 +353,10 @@
 
       &#history {}
 
+      &#social {
+      	padding: 1em;
+      }
+
       &#amendment_attempts {
         h2 {
           font-size: 125%;
@@ -518,5 +522,10 @@ $border-radius-base: 6px;
         cursor: default;
       }
     }
+  }
+  // pulling this in mainly for less shorthand
+  &.nav-justified {
+    @extend .nav-justified !optional;
+    @extend .nav-tabs-justified !optional;
   }
 }
