@@ -18,7 +18,7 @@ set :branch, ENV['BRANCH'] || "master"
 
 #set(:application) { config_name.split(':').reverse[1] }
 
-set :application, 'chicagocode'
+set :application, 'chicagocode.org'
 
 set(:site) { config_name.split(':')[0] }
 
