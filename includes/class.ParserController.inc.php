@@ -716,7 +716,7 @@ class ParserController
 				}
 
 			}
-		
+
 			$this->logger->message('Analyzed and stored law codification histories', 3);
 
 		}
@@ -799,7 +799,7 @@ class ParserController
 		 */
 		$statement = $this->db->prepare($sql);
 		$result = $statement->execute();
-		
+
 		if ($result == FALSE)
 		{
 			$this->logger->message('Could not map the structure of the laws', 10);
@@ -808,7 +808,7 @@ class ParserController
 		$this->logger->message('Mapped the structure of the laws', 3);
 
 		return TRUE;
-		
+
 	}
 
 	/**
@@ -877,21 +877,21 @@ class ParserController
 
 			if (is_writable($config_file))
 			{
-			
+
 				$config = file_get_contents($config_file);
 				$config = str_replace("('API_KEY', '')", "('API_KEY', '" . $api->key . "')", $config);
 				file_put_contents($config_file, $config);
 
 				$this->logger->message('Created internal API key', 5);
-				
+
 			}
 			else
 			{
-			
+
 				$this->logger->message('Created the internal API key, but your config.inc.php file '
 					. 'could not be modified to store it—please edit that file and set the value '
 					. 'of API_KEY to ' . $api->key, 10);
-				
+
 			}
 
 			return TRUE;
@@ -975,11 +975,11 @@ class ParserController
 
 		if ($write_json === TRUE)
 		{
-		
+
 			$output = array();
 			exec('cd ' . $downloads_dir . '; zip -9rq code.json.zip code-json');
 			$this->logger->message('Created a ZIP file of the laws as JSON', 3);
-			
+
 		}
 
 		/*
@@ -987,11 +987,11 @@ class ParserController
 		 */
 		if ($write_text === TRUE)
 		{
-		
+
 			$output = array();
 			exec('cd ' . $downloads_dir . '; zip -9rq code.txt.zip code-text');
 			$this->logger->message('Created a ZIP file of the laws as plain text', 3);
-			
+
 		}
 
 		/*
@@ -999,11 +999,11 @@ class ParserController
 		 */
 		if ($write_xml === TRUE)
 		{
-		
+
 			$output = array();
 			exec('cd ' . $downloads_dir . '; zip -9rq code.xml.zip code-xml');
 			$this->logger->message('Created a ZIP file of the laws as XML', 3);
-			
+
 		}
 
 		/*
@@ -1062,9 +1062,9 @@ class ParserController
 				$zip->close();
 
 			}
-			
+
 			$this->logger->message('Created a ZIP file of all dictionary terms as JSON', 3);
-			
+
 		}
 
 		if ($this->edition['current'] == '1')
@@ -1077,7 +1077,7 @@ class ParserController
 				$this->logger->message('Could not create “current” symlink in /downloads/—it must '
 					. 'be created manually', 10);
 			}
-			
+
 			$this->logger->message('Created downloads “current” symlink', 4);
 
 		}
@@ -1558,18 +1558,18 @@ class ParserController
 
 		foreach (array('code-json', 'code-text', 'code-xml', 'images') as $data_dir)
 		{
-		
+
 			$this->logger->message('Creating "' . $this->downloads_dir . $data_dir . '"', 4);
 
 			/*
 			 * If the JSON directory doesn't exist, create it.
 			 */
 			$this->mkdir($this->downloads_dir . $data_dir);
-			
+
 		}
-		
+
 		$this->logger->message('Created output directories for bulk download files', 5);
-		
+
 	}
 
 	public function mkdir($dir)
@@ -1689,7 +1689,7 @@ class ParserController
 		 * Save the resulting file.
 		 */
 		file_put_contents($sitemap_file, $xml->asXML());
-		
+
 		$this->logger->message('Created sitemap.xml', 3);
 
 		return TRUE;
@@ -1709,12 +1709,12 @@ class ParserController
 		global $cache;
 		if (isset($cache))
 		{
-		
+
 			$cache->flush();
 			$this->logger->message('Cleared in-memory cache', 5);
-			
+
 		}
-		
+
 	}
 
 	/**
@@ -1825,7 +1825,7 @@ class ParserController
 			$result = $statement->execute($sql_args);
 
 		}
-		
+
 		$this->logger->message('Generated structural statistics', 3);
 
 	} // end structural_stats_generate()
@@ -2068,7 +2068,7 @@ class ParserController
 		{
 
 			$this->logger->message('Updating search index', 5);
-			
+
 			/*
 			 * Define the Solr URL to which the XML files will be posted.
 			 */
@@ -2208,7 +2208,7 @@ class ParserController
 
 	function clear_index()
 	{
-	
+
 		if (!defined('SOLR_URL'))
 		{
 			return TRUE;
@@ -2224,11 +2224,11 @@ class ParserController
 		{
 			return FALSE;
 		}
-		
+
 		$this->logger->message('Solr cleared of all indexed laws', 5);
 
 		return TRUE;
-		
+
 	}
 
 	function handle_solr_request($fields = array(), $multipart = false, $parameters = array())

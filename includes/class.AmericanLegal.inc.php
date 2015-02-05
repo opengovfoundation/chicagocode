@@ -240,7 +240,12 @@ abstract class AmericanLegalParser
 	 */
 	public function import_xml($filename)
 	{
-		$xml = file_get_contents($filename);
+		$this->logger->message('Importing '.$filename, 5);
+		$xml = trim(file_get_contents($filename));
+		if(strlen($xml) == 0)
+		{
+			return null;
+		}
 
 		try
 		{
