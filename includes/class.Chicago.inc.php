@@ -26,7 +26,22 @@ class Parser extends AmericanLegalParser
 	public $section_regex = '/^(?:Â§ )?(?P<number>X?[0-9]+-[0-9]+-[0-9]+(\.[0-9]+)?)\s*(?P<catch_line>.*?)\.?\]?$/i';
 
 	public $default_structure_regex = '/^(?P<type>ARTICLE|TITLE|CHAPTER|DIVISION|PART|SECTION)\s+(?P<number>[A-Za-z0-9\-\.]+)\s+(?P<name>.*?)$/i';
-	public $preface_structure_regex = '/^(?P<name>.*)$/';
+	public $preface_section_regex = '/^(?P<name>.*)$/';
+
+	/*
+	 * Files to ignore.
+	 */
+	public $ignore_files = array(
+		'0-0-0-1.xml',
+		'0-0-0-5.xml'
+	);
+
+	/*
+	 * We end up with a duplicate of the Adopting Ordinance section.
+	 * Use a static variable to check this and skip it.
+	 */
+
+	static public $adopting_done;
 
 	public function pre_parse_chapter(&$chapter)
 	{
@@ -55,7 +70,7 @@ class Parser extends AmericanLegalParser
 		{
 			$this->logger->message('Handling code intro.', 3);
 
-			$this->structure_regex = $this->preface_structure_regex;
+			$this->section_regex = $this->preface_section_regex;
 
 			$structure = new stdClass();
 			$structure->name = ucwords(strtolower($title));
@@ -63,18 +78,18 @@ class Parser extends AmericanLegalParser
 			switch($title)
 			{
 				case 'MUNICIPAL CODE OF CHICAGO' :
-					$structure->identifier = 'Municipal Code';
+					$structure->identifier = 'Code';
 					$structure->order_by = '0';
+					$structure->label = 'Code';
 					break;
 
 				case 'TABLES' :
 					$structure->identifier = 'Tables';
 					$structure->order_by = '999';
+					$structure->label = 'Tables';
 					break;
 			}
 
-			$structure->label = 'Code';
-			$structure->order_by = '0';
 
 			$structure->level = count($this->structures) + 1;
 
@@ -127,17 +142,43 @@ class Parser extends AmericanLegalParser
 
 		$this->logger->message('Title: ' . $section_title, 1);
 
-		if ($section_title == "PREFACE")
-		{
-			$section_parts = array(
-				'number' => "preface",
-				'catch_line' => "Preface"
-			);
-		}
-		else
-		{
+		switch($section_title) {
+			case 'PREFACE' :
+				$section_parts = array(
+					'number' => 'Preface',
+					'catch_line' => $section_title,
+					'order_by' => 1
+				);
+				break;
 
-			preg_match($this->section_regex, $section_title, $section_parts);
+			case 'ADOPTING ORDINANCE' :
+				/*
+				 * This appears twice in the code.  We skip it the second time.
+				 */
+				var_dump('Adopting Done', $this->adopting_done);
+				if($this->adopting_done !== true) {
+					$section_parts = array(
+						'number' => 'Adopting',
+						'catch_line' => $section_title,
+						'order_by' => 2
+					);
+					$this->adopting_done = true;
+				}
+				else {
+					return false;
+				}
+				break;
+
+			case 'MUNICIPAL CODE OF CHICAGO' :
+				$section_parts = array(
+					'number' => 'MunicipalCode',
+					'catch_line' => $section_title,
+					'order_by' => 3
+				);
+				break;
+
+			default:
+				preg_match($this->section_regex, $section_title, $section_parts);
 		}
 
 		return $section_parts;

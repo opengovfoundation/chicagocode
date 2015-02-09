@@ -612,6 +612,12 @@ abstract class AmericanLegalParser
 
 		$section_parts = $this->get_section_parts($section);
 
+		if($section_parts === false)
+		{
+			$this->logger->message('Invalid section: ' . print_r($code, TRUE), 2);
+			return FALSE;
+		}
+
 		if(!isset($section_parts['number']) || !isset($section_parts['catch_line']))
 		{
 			$this->logger->message('Could not get Section info from title, "' . (string) $section->RECORD->HEADING . '"', 5);
@@ -625,6 +631,10 @@ abstract class AmericanLegalParser
 		{
 			$code->section_number = $section_parts['number'];
 			$code->catch_line = $section_parts['catch_line'];
+			if($section_parts['order_by'])
+			{
+				$code->order_by = $section_parts['order_by'];
+			}
 		}
 
 		$code->section_number = $this->clean_identifier($code->section_number);
@@ -644,7 +654,10 @@ abstract class AmericanLegalParser
 			'repealed' => 'n'
 		);
 
-		$code->order_by = $this->get_section_order_by($code);
+		if(!isset($code->order_by))
+		{
+			$code->order_by = $this->get_section_order_by($code);
+		}
 
 		/*
 		 * Get the paragraph text from the children RECORDs.
