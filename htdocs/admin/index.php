@@ -42,7 +42,7 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW']) ||
         <big>Wrong Username or Password</big>
         </body></html>';
     exit;
-    
+
 }
 
 /*
@@ -140,6 +140,7 @@ elseif ($_POST['action'] == 'parse')
 			{
 
 				$parser->clear_cache();
+				$parser->setup_directories();
 
 				/*
 				 * We should only continue if parsing was successful.
@@ -442,7 +443,7 @@ function show_admin_forms($args = array())
 	global $cache;
 	if (isset($cache))
 	{
-	
+
 		$body .= '
 			<form method="post" action="/admin/?page=parse&noframe=1">
 				<h3>Clear the In-Memory Cache</h3>
@@ -450,7 +451,7 @@ function show_admin_forms($args = array())
 				<input type="hidden" name="action" value="cache" />
 				<input type="submit" value="Clear Cache" />
 			</form>';
-			
+
 	}
 
 	return $body;
