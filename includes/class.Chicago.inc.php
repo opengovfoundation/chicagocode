@@ -22,10 +22,8 @@ class State extends AmericanLegalState {}
 
 class Parser extends AmericanLegalParser
 {
-	//     Patterns:                         | section number                          |   | hyphen | catch line
-	public $section_regex = '/^(?:Â§ )?(?P<number>X?[0-9]+-[0-9]+-[0-9]+(\.[0-9]+)?)\s*(?P<catch_line>.*?)\.?\]?$/i';
-
-	public $default_structure_regex = '/^(?P<type>ARTICLE|TITLE|CHAPTER|DIVISION|PART|SECTION)\s+(?P<number>[A-Za-z0-9\-\.]+)\s+(?P<name>.*?)$/i';
+	public $structure_regex = '/^(?P<type>ARTICLE|TITLE|CHAPTER|DIVISION|PART|SECTION)\s+(?P<number>[A-Za-z0-9\-\.]+)\s+(?P<name>.*?)$/i';
+	public $default_section_regex = '/^(?:Â§ )?(?P<number>X?[0-9]+-[0-9]+-[0-9]+(\.[0-9]+)?)\s*(?P<catch_line>.*?)\.?\]?$/i';
 	public $preface_section_regex = '/^(?P<name>.*)$/';
 
 	/*
@@ -53,7 +51,7 @@ class Parser extends AmericanLegalParser
 		 */
 		$this->logger->message('Generating top sections.', 2);
 
-		$this->structure_regex = $this->default_structure_regex;
+		$this->section_regex = $this->default_section_regex;
 
 		// The Tables page still needs some work.
 		if($title == 'TABLES')
@@ -155,7 +153,6 @@ class Parser extends AmericanLegalParser
 				/*
 				 * This appears twice in the code.  We skip it the second time.
 				 */
-				var_dump('Adopting Done', $this->adopting_done);
 				if($this->adopting_done !== true) {
 					$section_parts = array(
 						'number' => 'Adopting',
