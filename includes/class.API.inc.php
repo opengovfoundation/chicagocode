@@ -166,6 +166,7 @@ class API
 			return FALSE;
 		}
 
+
 		/*
 		 * Make sure that the provided API key is the correct length.
 		 */

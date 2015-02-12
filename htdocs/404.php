@@ -15,8 +15,6 @@
  *
  */
 
-require $_SERVER['DOCUMENT_ROOT'].'/../includes/page-head.inc.php';
-
 /*
  * Create a container for our content.
  */
