@@ -121,11 +121,7 @@ textarea {
 
 #main_content {
   overflow:hidden;
-<<<<<<< HEAD
   padding: 20px 20px;
-=======
-  padding: 20px 0;
->>>>>>> sdmaster/master
 
   @include respond-to(smartphone) {
 	padding: 0 10px;
