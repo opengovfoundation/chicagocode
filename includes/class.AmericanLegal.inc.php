@@ -1474,7 +1474,7 @@ abstract class AmericanLegalParser
 		/*
 		 * Get a normalized listing of definitions.
 		 */
-		$definitions = $dictionary->extract_definitions();
+		$definitions = $this->extract_definitions($this->code->text, $this->get_structure_labels());
 
 		/*
 		 * Check to see if this section or its containing structural unit were specified in the
@@ -1815,10 +1815,11 @@ abstract class AmericanLegalParser
 	 * When fed a section of the code that contains definitions, extracts the definitions from that
 	 * section and returns them as an object. Requires only a block of text.
 	 */
-	function extract_definitions()
+	function extract_definitions($text, $structure_labels)
 	{
+		$scope = 'global';
 
-		if (!isset($this->text))
+		if (!isset($text))
 		{
 			return FALSE;
 		}
@@ -1854,7 +1855,7 @@ abstract class AmericanLegalParser
 		 * of text, to determine which type are used in these definitions. We double the count of
 		 * directional quotes since we're only counting one of the two directions.
 		 */
-		if ( substr_count($this->text, '"') > (substr_count($this->text, '”') * 2) )
+		if ( substr_count($text, '"') > (substr_count($text, '”') * 2) )
 		{
 			$quote_type = 'straight';
 			$quote_sample = '"';
@@ -1871,12 +1872,12 @@ abstract class AmericanLegalParser
 		 */
 		if (strpos($this->text, '<p>') !== FALSE)
 		{
-			$paragraphs = explode('<p>', $this->text);
+			$paragraphs = explode('<p>', $text);
 		}
 		else
 		{
-			$this->text = str_replace("\n", "\r", $this->text);
-			$paragraphs = explode("\r", $this->text);
+			$this->text = str_replace("\n", "\r", $text);
+			$paragraphs = explode("\r", $text);
 		}
 
 		/*
@@ -1912,7 +1913,6 @@ abstract class AmericanLegalParser
 				 * one, which we'll use to narrow the scope of our search for the use of structural
 				 * labels within the text.
 				 */
-				$structure_labels = $this->structure_labels;
 
 				usort($structure_labels, 'sort_by_length');
 				$longest_label = strlen(current($structure_labels));

@@ -1234,7 +1234,7 @@ class Parser
 		/*
 		 * Get a normalized listing of definitions.
 		 */
-		$definitions = $dictionary->extract_definitions();
+		$definitions = $this->extract_definitions();
 
 		/*
 		 * Check to see if this section or its containing structural unit were specified in the
