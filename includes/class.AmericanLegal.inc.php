@@ -98,6 +98,7 @@ abstract class AmericanLegalParser
 		'for the purposes of this ',
 		'for the purpose of this ',
 		'in this ',
+		'apply in the interpretation and enforcement of this ',
 	);
 
 	/*
@@ -1888,6 +1889,7 @@ abstract class AmericanLegalParser
 		else
 		{
 			$text = str_replace("\n", "\r", $text);
+
 			$paragraphs = explode("\r", $text);
 		}
 
