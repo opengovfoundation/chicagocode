@@ -13,15 +13,16 @@
   .even {
     background-color: $gray-lighter;
   }
+  $left-width: 150px;
   dt {
     clear: both;
     display: block;
     float: left;
     margin-right: 10px;
-    width: 120px;
+    width: $left-width;
   }
 
   dd {
-    margin-left: 120px;
+    margin-left: $left-width;
   }
 }
