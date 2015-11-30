@@ -92,10 +92,6 @@ class ChicagoCode2013__Page extends Page
 			'path' => '/js/vendor/functions.js',
 			'type' => 'javascript',
 			'requires' => array('jquery', 'jquery_zclip', 'mousetrap', 'jquery_qtip', 'datatables')
-		),
-		'uservoice' => array(
-			'path' => '/js/vendor/uservoice.js',
-			'type' => 'javascript'
 		)
 	);
 
