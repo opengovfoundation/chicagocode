@@ -282,6 +282,15 @@
         padding: 0 10px;
       }
 
+      ul {
+        margin-left:10px;
+        margin-top:5px;
+
+        li {
+          margin-bottom:10px;
+        }
+      }
+
       &.header-bar-full {
         float: none;
         width: 100%;

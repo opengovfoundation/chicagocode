@@ -297,6 +297,26 @@ $sidebar .= ' on the official ' . LAWS_NAME . ' website</a>.
 			</section>';
 
 /*
+ *  Additional resources from the Clerk's office
+ */
+
+$sidebar .= '<section class="info-box">
+							<h1>Additional Resources</h1>
+							<ul>
+								<li>
+									<a href="http://www.cityofchicago.org/city/en/depts/bldgs.html" target="_blank">Chicago Department of Buildings</a>
+								</li>
+								<li>
+									<a href="http://www.cityofchicago.org/city/en/depts.html" target="_blank">Chicago City Hall Department Directory</a>
+								</li>
+								<li>
+									<a href="http://www.cityofchicago.org/city/en/depts/311.html" target="_blank">Chicago 311 City Services</a>
+								</li>
+							</ul>
+						</section>';
+
+
+/*
  * Start the Masonry.js wrapper
  */
 $sidebar .= '<div class="grouping js-masonry"
