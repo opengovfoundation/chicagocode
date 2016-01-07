@@ -61,8 +61,8 @@ class Parser extends AmericanLegalParser
 					AND name = :name
 					AND edition_id = :edition_id ';
 				$sql_args = array();
-				$sql_args[':identifier'] = $matches['number'];
-				$sql_args[':name'] = ucwords(strtolower($matches['name']));
+				$sql_args[':identifier'] = $this->clean_identifier($matches['number']);
+				$sql_args[':name'] = $this->clean_title($matches['name']);
 				$sql_args[':edition_id'] = $this->edition_id;
 
 				if ($last_structure = end($this->structures)) {
@@ -85,9 +85,9 @@ class Parser extends AmericanLegalParser
 						$matches['number'] . ' : ' . $matches['name'], 2);
 
 					$structure = new stdClass();
-					$structure->name = ucwords(strtolower($matches['name']));
-					$structure->label = ucwords(strtolower($matches['type']));
-					$structure->identifier = $matches['number'];
+					$structure->name = $this->clean_title($matches['name']);
+					$structure->label = $this->clean_title($matches['type']);
+					$structure->identifier = $this->clean_identifier($matches['number']);
 					$structure->order_by = $this->get_structure_order_by($structure);
 
 					if ($last_structure = end($this->structures)) {
@@ -131,7 +131,7 @@ class Parser extends AmericanLegalParser
 			$this->section_regex = $this->preface_section_regex;
 
 			$structure = new stdClass();
-			$structure->name = ucwords(strtolower($title));
+			$structure->name = $this->clean_title($title);
 
 			switch($title)
 			{
@@ -230,12 +230,22 @@ class Parser extends AmericanLegalParser
 		// numbers of spaces in the title.
 		$text = preg_replace('/\s+/', ' ', $text);
 
+		// Trim the text for any spaces or periods.
+		$text = trim($text, ". \t\n\r\0\x0B");
+
+		$text = ucwords(strtolower($text));
+
+		return $text;
+	}
+
+	public function clean_identifier($text)
+	{
 		// Some structures have a collection of sections, so we use the range
 		// here instead.
 		$text = str_replace(' THROUGH ', '-', $text);
 
-		// Default cleaning.
-		$text = $this->clean_identifier($text);
+		// Trim the text for any spaces or periods.
+		$text = trim($text, ". \t\n\r\0\x0B");
 
 		return $text;
 	}
