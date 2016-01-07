@@ -353,14 +353,7 @@ abstract class AmericanLegalParser
 	 */
 
 	public function pre_parse_chapter(&$chapter)
-	{
-		// If there's more than one title, this has a table of contents.
-		if(count($chapter->REFERENCE->TITLE) > 1)
-		{
-			$this->logger->message('Skipping first level.', 2);
-			unset($chapter->LEVEL->LEVEL[0]);
-		}
-	}
+	{}
 
 	public function parse_recurse($levels)
 	{
@@ -375,20 +368,47 @@ abstract class AmericanLegalParser
 		else {
 			$level = $levels;
 
-
-			$title = (string) $level->RECORD->HEADING;
-
 			/*
 			 * Check to see if we have another layer of nesting
 			 */
 			if(isset($level->LEVEL))
 			{
+
+				if($level->LEVEL[0]->xpath('./RECORD/PARA[@style-name-escaped="Chapter-Analysis"]')) {
+					$this->logger->message('Skipping table of contents', 2);
+					unset($level->LEVEL[0]);
+				}
+
+				/*
+				 * If we have one level deeper, this is a section.
+				 */
+				if($level->xpath('./LEVEL[@style-name-escaped="Normal-Level"]')
+					&& $level->xpath('./RECORD/HEADING')
+					&& !$level->xpath('./LEVEL/LEVEL'))
+				{
+					$this->logger->message('SECTION', 2);
+
+					$new_section = $this->parse_section($level, $structures);
+
+					if($new_section)
+					{
+						$this->sections[] = $new_section;
+					}
+					else {
+						/*
+						 * See if maybe we have a structure after all.
+						 */
+						// TODO
+					}
+				}
+
 				/*
 				 * If we have two levels deeper, this is a structure.
 				 */
-				if(count($level->xpath('./LEVEL/LEVEL')) || preg_match($this->structure_regex, $title))
+				else
 				{
 					$structure = FALSE;
+					$title = (string) $level->RECORD->HEADING;
 
 					$this->logger->message('STRUCTURE "' . $title . '"', 2);
 
@@ -423,26 +443,6 @@ abstract class AmericanLegalParser
 						$this->logger->message('Ascending', 2);
 
 						array_pop($this->structures);
-					}
-				}
-				/*
-				 * If we have one level deeper, this is a section.
-				 */
-				else
-				{
-					$this->logger->message('SECTION', 2);
-
-					$new_section = $this->parse_section($level, $structures);
-
-					if($new_section)
-					{
-						$this->sections[] = $new_section;
-					}
-					else {
-						/*
-						 * See if maybe we have a structure after all.
-						 */
-						// TODO
 					}
 				}
 			}

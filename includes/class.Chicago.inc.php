@@ -23,7 +23,7 @@ class State extends AmericanLegalState {}
 class Parser extends AmericanLegalParser
 {
 	public $structure_regex = '/^(?P<type>ARTICLES?|TITLE|CHAPTER|DIVISION|PART|SECTION)\s+(?P<number>[A-Za-z0-9\-\.]+( THROUGH [A-Za-z0-9\-\.])?):?(\s+(?P<name>.*?))?$/i';
-	public $default_section_regex = '/^((?:§ )?(?P<number>(X?[0-9]+-[0-9]+-[0-9]+(\.[0-9]+)?)|APPENDIX [A-Z]+))\s*(?P<catch_line>.*?)\.?\]?$/i';
+	public $default_section_regex = '/^((?:§ )?(?P<number>(X?[0-9]+-[0-9]+-[0-9]+(\.[0-9]+)?)|(APPENDIX|PART) [A-Z]+)):?\s*(?P<catch_line>.*?)\.?\]?$/i';
 	public $preface_section_regex = '/^(?P<name>.*)$/';
 
 	/*
