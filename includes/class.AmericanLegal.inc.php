@@ -845,6 +845,9 @@ abstract class AmericanLegalParser
 		// Replace CELL.
 		$xml = preg_replace('/<CELL[^>]*>(.*?)<\/CELL>/sm', '$1', $xml);
 
+		// Replace LINK.
+		$xml = preg_replace('/<LINK[^>]*>(.*?)<\/LINK>/sm', '$1', $xml);
+
 		// Replace empty tables.
 		$xml = preg_replace('/<TABLE>\s*<\/TABLE>/sm', '', $xml);
 

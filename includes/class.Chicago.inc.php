@@ -22,8 +22,8 @@ class State extends AmericanLegalState {}
 
 class Parser extends AmericanLegalParser
 {
-	public $structure_regex = '/^(?P<type>ARTICLE|TITLE|CHAPTER|DIVISION|PART|SECTION)\s+(?P<number>[A-Za-z0-9\-\.]+)\s+(?P<name>.*?)$/i';
-	public $default_section_regex = '/^(?:Â§ )?(?P<number>X?[0-9]+-[0-9]+-[0-9]+(\.[0-9]+)?)\s*(?P<catch_line>.*?)\.?\]?$/i';
+	public $structure_regex = '/^(?P<type>ARTICLES?|TITLE|CHAPTER|DIVISION|PART|SECTION)\s+(?P<number>[A-Za-z0-9\-\.]+( THROUGH [A-Za-z0-9\-\.])?):?(\s+(?P<name>.*?))?$/i';
+	public $default_section_regex = '/^((?:§ )?(?P<number>(X?[0-9]+-[0-9]+-[0-9]+(\.[0-9]+)?)|APPENDIX [A-Z]+))\s*(?P<catch_line>.*?)\.?\]?$/i';
 	public $preface_section_regex = '/^(?P<name>.*)$/';
 
 	/*
@@ -39,10 +39,64 @@ class Parser extends AmericanLegalParser
 	 * Use a static variable to check this and skip it.
 	 */
 
-	static public $adopting_done;
+	public static $adopting_done;
 
 	public function pre_parse_chapter(&$chapter)
 	{
+		// Get all of the titles before the current one.
+		// Cast into an array for easier manipulation;
+		$titles = (array) $chapter->REFERENCE->TITLE;
+		array_pop($titles);
+
+		foreach ($titles as $title) {
+			if (preg_match($this->structure_regex, $title, $matches)) {
+				// We've got a structure, see if it exists.
+				$sql = 'SELECT * FROM structure
+					WHERE identifier = :identifier
+					AND name = :name
+					AND edition_id = :edition_id ';
+				$sql_args = array();
+				$sql_args[':identifier'] = $matches['number'];
+				$sql_args[':name'] = ucwords(strtolower($matches['name']));
+				$sql_args[':edition_id'] = $this->edition_id;
+
+				if ($last_structure = end($this->structures)) {
+					$sql .= 'AND parent_id = :parent_id ';
+					$sql_args[':parent_id'] = $last_structure->id;
+				} else {
+					$sql .= 'AND parent_id IS NULL ';
+				}
+
+				$statement = $this->db->prepare($sql);
+				$result = $statement->execute($sql_args);
+
+				if ($result && $statement->rowCount() > 0) {
+					$this->logger->message('Structure exists ' .
+						$matches['number'] . ' : ' . $matches['name'], 2);
+					$structure = $statement->fetch(PDO::FETCH_OBJ);
+					$this->structures[] = $structure;
+				} else {
+					$this->logger->message('Creating structure ' .
+						$matches['number'] . ' : ' . $matches['name'], 3);
+
+					$structure = new stdClass();
+					$structure->name = ucwords(strtolower($matches['name']));
+					$structure->label = ucwords(strtolower($matches['type']));
+					$structure->identifier = strtolower($matches['number']);
+					$structure->order_by = $structure->identifier;
+
+					if ($last_structure = end($this->structures)) {
+						$structure->parent_id = $last_structure->id;
+					}
+
+					$structure->level = count($this->structures) + 1;
+
+					$structure->id = $this->create_structure($structure);
+
+					$this->structures[] = $structure;
+				}
+			}
+		}
 
 		$title = trim($chapter->REFERENCE->TITLE[0]);
 
@@ -91,7 +145,7 @@ class Parser extends AmericanLegalParser
 
 			$structure->level = count($this->structures) + 1;
 
-			if(isset($matches[3]) && strlen(trim($matches[3])))
+			if (isset($matches[3]) && strlen(trim($matches[3])))
 			{
 				$structure->metadata = new stdClass();
 				$structure->metadata->text = trim($matches[3]);
@@ -101,33 +155,6 @@ class Parser extends AmericanLegalParser
 
 			$this->structures[] = $structure;
 
-		}
-
-		elseif(preg_match('/^TITLE (?P<number>[0-9]+) (?P<name>.*)$/', $title, $matches))
-		{
-			// Skip the first level.
-			$this->logger->message('Skipping first level.', 2);
-			unset($chapter->LEVEL->LEVEL[0]);
-
-			$this->logger->message('TITLE: ' . $matches[1], 1);
-
-			$structure = new stdClass();
-			$structure->name = ucwords(strtolower($matches['name']));
-			$structure->label = 'Code';
-			$structure->identifier = strtolower($matches['number']);
-			$structure->order_by = $structure->identifier;
-
-			$structure->level = count($this->structures) + 1;
-
-			if(isset($matches[3]) && strlen(trim($matches[3])))
-			{
-				$structure->metadata = new stdClass();
-				$structure->metadata->text = trim($matches[3]);
-			}
-
-			$this->create_structure($structure);
-
-			$this->structures[] = $structure;
 		}
 	}
 
@@ -137,6 +164,7 @@ class Parser extends AmericanLegalParser
 		 * Parse the catch line and section number.
 		 */
 		$section_title = trim((string) $section->RECORD->HEADING);
+		$section_title = str_replace('&#160;', ' ', $section_title);
 
 		$this->logger->message('Title: ' . $section_title, 1);
 
@@ -178,7 +206,32 @@ class Parser extends AmericanLegalParser
 				preg_match($this->section_regex, $section_title, $section_parts);
 		}
 
+		// If we have an appendix.
+		if (!$section_parts['catch_line'] && $section_parts['number'] &&
+			substr($section_parts['number'], 0, 9) === 'APPENDIX ') {
+			$section_parts['catch_line'] = $section_title;
+		}
+
 		return $section_parts;
+	}
+
+	public function clean_title($text)
+	{
+		// We often see <LINEBRK/> inside of titles.
+		$text = str_replace('<LINEBRK/>', ' ', $text);
+
+		// Sometimes, different parts of the code will have different
+		// numbers of spaces in the title.
+		$text = preg_replace('/\s+/', ' ', $text);
+
+		// Some structures have a collection of sections, so we use the range
+		// here instead.
+		$text = str_replace(' THROUGH ', '-', $text);
+
+		// Default cleaning.
+		$text = $this->clean_identifier($text);
+
+		return $text;
 	}
 
 	/**
