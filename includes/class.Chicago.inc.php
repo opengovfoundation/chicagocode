@@ -88,7 +88,7 @@ class Parser extends AmericanLegalParser
 					$structure->name = ucwords(strtolower($matches['name']));
 					$structure->label = ucwords(strtolower($matches['type']));
 					$structure->identifier = $matches['number'];
-					$structure->order_by = get_structure_order_by($structure);
+					$structure->order_by = $this->get_structure_order_by($structure);
 
 					if ($last_structure = end($this->structures)) {
 						$structure->parent_id = $last_structure->id;
