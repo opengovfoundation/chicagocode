@@ -45,7 +45,10 @@ class Parser extends AmericanLegalParser
 	{
 		// Get all of the titles before the current one.
 		// Cast into an array for easier manipulation;
-		$titles = (array) $chapter->REFERENCE->TITLE;
+		$titles = array();
+		foreach($chapter->REFERENCE->TITLE as $title) {
+			$titles[] = $title;
+		};
 		array_pop($titles);
 
 		$this->logger->message('Got titles: ' . print_r($titles, true), 1);
