@@ -82,7 +82,7 @@ class Parser extends AmericanLegalParser
 					$this->structures[] = $structure;
 				} else {
 					$this->logger->message('Creating structure ' .
-						$matches['number'] . ' : ' . $matches['name'], 3);
+						$matches['number'] . ' : ' . $matches['name'], 2);
 
 					$structure = new stdClass();
 					$structure->name = ucwords(strtolower($matches['name']));
