@@ -390,7 +390,7 @@ abstract class AmericanLegalParser
 				{
 					$structure = FALSE;
 
-					$this->logger->message('STRUCTURE', 2);
+					$this->logger->message('STRUCTURE "' . $title . '"', 2);
 
 					// If we have a structure heading, add it to the structures.
 					if(count($level->xpath($this->structure_heading_xpath))) {

@@ -48,6 +48,8 @@ class Parser extends AmericanLegalParser
 		$titles = (array) $chapter->REFERENCE->TITLE;
 		array_pop($titles);
 
+		$this->logger->message('Got titles: ' . print_r($titles, true), 1);
+
 		foreach ($titles as $title) {
 			if (preg_match($this->structure_regex, $title, $matches)) {
 				// We've got a structure, see if it exists.
@@ -95,6 +97,7 @@ class Parser extends AmericanLegalParser
 
 					$this->structures[] = $structure;
 				}
+				$this->logger->message('Structure: ' . print_r($structure, true), 1);
 			}
 		}
 
