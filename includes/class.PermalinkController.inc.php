@@ -43,7 +43,6 @@ class PermalinkController extends BaseController
 			 */
 			if ( ($result !== FALSE) && ($statement->rowCount() > 0) )
 			{
-
 				$route = $statement->fetch(PDO::FETCH_ASSOC);
 
 				/*
@@ -52,10 +51,15 @@ class PermalinkController extends BaseController
 				$object_name = str_replace(' ', '', ucwords($route['object_type'])) .
 					'Controller';
 
-				if (class_exists($object_name, FALSE) == FALSE)
-				{
-					$controller = new $object_name();
-					return $controller->handle($route);
+				try {
+					if (class_exists($object_name) !== FALSE)
+					{
+						$controller = new $object_name();
+						return $controller->handle($route);
+					}
+				}
+				catch (Exception $error) {
+					return $this->handleNotFound($args);
 				}
 
 			}
