@@ -197,11 +197,12 @@ $body .= $law->html;
 //elseif (isset($law->history))
 //{
 
+if(isset($law->history) && $law->history) {
 	$body .= '<section id="history">
 				<h2>History</h2>
 				<p>'.$law->history.'</p>
 			</section>';
-
+}
 //}
 
 /*
