@@ -241,8 +241,14 @@ if (!empty($_GET['q']))
 			
 				foreach ($snippet as $field => $highlight)
 				{
-					$body .= strip_tags( implode(' .&thinsp;.&thinsp;. ', $highlight), '<span>' )
-						. ' .&thinsp;.&thinsp;. ';
+					$body .= substr(
+						strip_tags(
+							str_replace('<', ' <',
+								implode(' .&thinsp;.&thinsp;. ', $highlight)
+							)
+						, '<span>' )
+					, 0, 250)
+					. ' .&thinsp;.&thinsp;. ';
 				}
 						
 				/*
