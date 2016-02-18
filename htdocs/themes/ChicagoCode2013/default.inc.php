@@ -96,7 +96,7 @@
 					best. Seriously, OpenGov is not your attorney. Heck, we’re not attorneys at all.
 				</p>
 				<p class="credits">
-					Copyright 2013 the <a href="http://opengovfoundation.org">OpenGov Foundation</a><br />
+					Maintained by the <a href="http://opengovfoundation.org">OpenGov Foundation</a><br />
 					Powered by <a href="http://www.statedecoded.com/">The State Decoded</a><br />
 					Design by <a href="http://www.meticulous.com">Meticulous</a>
 				</p>
