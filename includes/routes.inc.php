@@ -24,6 +24,9 @@ Router::addRoute('^/downloads/?(.*)', 'downloads/index.php');
 // Search
 Router::addRoute('^/search/?(.*)', 'search.php');
 
+// Envision
+Router::addRoute('^/envision/?(.*)', 'envision.php');
+
 // Browse
 Router::addRoute('^/browse/?(.*)', array('StructureController', 'handle'));
 

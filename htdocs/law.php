@@ -210,6 +210,19 @@ $body .= $law->html;
  */
 $body .= '</article>';
 
+/** Envision Chicago */
+$body .= '<section>
+	<h2>Envision Chicago</h2>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac scelerisque sem, a pellentesque urna. Nam ac aliquet sem. Phasellus vel eros nisl. Sed dapibus eu dolor in congue. Nulla placerat, orci eu facilisis varius, nibh velit scelerisque augue, pharetra ornare nunc arcu vel magna. Sed vel eleifend neque. Praesent eleifend odio quis nisi consectetur vulputate. Suspendisse vestibulum nisl ut interdum laoreet.  <a href="/envision/">Read more about Envision Chicago.</a>
+	</p>
+	<p>
+		<a class="btn btn-success">Envision This Law</a>
+	</p>';
+
+
+/** End Envision Chicago */
+
 /*
  * Display links to representational variants of the text of this law.
  */
