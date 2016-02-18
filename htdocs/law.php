@@ -218,7 +218,7 @@ $body .= '<section>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac scelerisque sem, a pellentesque urna. Nam ac aliquet sem. Phasellus vel eros nisl. Sed dapibus eu dolor in congue. Nulla placerat, orci eu facilisis varius, nibh velit scelerisque augue, pharetra ornare nunc arcu vel magna. Sed vel eleifend neque. Praesent eleifend odio quis nisi consectetur vulputate. Suspendisse vestibulum nisl ut interdum laoreet.  <a href="/envision/">Read more about Envision Chicago.</a>
 	</p>
 	<p>
-		<a class="btn btn-success">Envision This Law</a>
+		<a class="btn btn-success" href="https://docs.google.com/forms/d/1IH1LUdPYB8lYCLTLS5YMNMd7Rg5EId0Xt_ZZ4sCixvg/viewform?entry.854504825&entry.103466807&entry.45758193&entry.803685449=' . $law->section_number . '&entry.1971567928='. SITE_URL . $law->url . '&entry.1728487902&entry.915672546&entry.552563733&entry.949223616">Envision This Law</a>
 	</p>';
 
 
