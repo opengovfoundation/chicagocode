@@ -97,8 +97,7 @@ abstract class AmericanLegalParser
 		'for purposes of this ',
 		'for the purposes of this ',
 		'for the purpose of this ',
-		'in this ',
-		'apply in the interpretation and enforcement of this ',
+		'in this '
 	);
 
 	/*

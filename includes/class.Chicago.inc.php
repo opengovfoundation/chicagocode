@@ -26,6 +26,17 @@ class Parser extends AmericanLegalParser
 	public $default_section_regex = '/^((?:§ )?(?P<number>(X?[0-9]+-[0-9]+-[0-9]+(\.[0-9]+)+)|(APPENDIX|PART) [A-Z]+)):?\s*(?P<catch_line>.*?)\.?\]?$/i';
 	public $preface_section_regex = '/^(?P<name>.*)$/';
 
+	public $scope_indicators = array(
+		' are used in this ',
+		'when used in this ',
+		'for purposes of this ',
+		'for the purposes of this ',
+		'for the purpose of this ',
+		'in this ',
+		'apply in the interpretation and enforcement of this ',
+		'apply in the interpretation and the enforcement of this ',
+	);
+
 	/*
 	 * Files to ignore.
 	 */
