@@ -271,11 +271,11 @@ class Parser extends AmericanLegalParser
 
 	public function get_order_by($identifier)
 	{
-		$parts = explode('-', $identifier);
+		$parts = preg_split('/-|\./', $identifier);
 
 		foreach($parts as $index => $part)
 		{
-			$parts[$index] = str_pad($part, 4, '0', STR_PAD_LEFT);
+			$parts[$index] = str_pad($part, 3, '0', STR_PAD_LEFT);
 
 		}
 
