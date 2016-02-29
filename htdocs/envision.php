@@ -30,10 +30,10 @@ $content->set('body',
 			<section class="feature-content">
 				<hgroup>
 					<h1>Envision Chicago</h1>
-					<h2>Envision A Better Chicago</h2>
+					<h2>Students Building A Better Chicago</h2>
 				</hgroup>
 				<img src="/themes/ChicagoCode2013/static/images/envision_logo_lofi.png"
-					style="float: right; margin-top: 15px; margin-right: 15px;">
+					style="float: right; margin: 15px;">
 				<p>
 				Chicago is your city.  How would you make it even better?
 				</p>
@@ -58,7 +58,7 @@ $content->set('body',
 				<ul style="margin-left: 60px">
 					<li><a href="http://chicagocode.org/7/">Health and Safety</a></li>
 					<li><a href="http://chicagocode.org/9/">Transportation</a></li>
-					<li><a href="http://chicagocode.org/4/ ">Consumer Protection</a></li>
+					<li><a href="http://chicagocode.org/4/">Consumer Protection</a></li>
 					<li><a href="http://chicagocode.org/2-45-115/">2015 Affordable Housing Requirements</a></li>
 					<li><a href="http://chicagocode.org/5/5-8/">Fair Housing</a></li>
 				</ul>
@@ -86,12 +86,6 @@ $content->set('body',
 					<h3>Questions and Answers</h3>
 
 					<p>
-					<strong>What is the deadline for submitting ideas to Envision a better Chicago?</strong>
-					</p>
-					<p>
-					The idea submission deadline is midnight on April 15, 2016.
-					</p>
-					<p>
 					<strong>How do I submit an idea?</strong>
 					</p>
 					<p>
@@ -104,25 +98,10 @@ $content->set('body',
 					You may submit as many ideas as you want, but you can only win once and there is only one winner as each of the four schools.
 					</p>
 					<p>
-					<strong>What Chicago High Schools and Wards Are Participating?</strong>
-					</p>
-					<ul>
-						<li>Marine Leadership Academy at Ames in the 26th Ward, represented by Alderman Roberto Maldonado.</li>
-						<li>Chicago Excel Academy of Roseland in the 34th Ward, represented by Alderman Carrie Austin.</li>
-						<li>Taft High School in the 41st Ward, represented by Alderman Anthony Napolitano.</li>
-						<li>Lake View High School in the 47th Ward, represented by Alderman Ameya Pawar.</li>
-					</ul>
-					<p>
 					<strong>How will Envision Chicago winners be selected?</strong>
 					</p>
 					<p>
 					Your school, the alderman who represents you on the Chicago City Council, <a href="http://chicityclerk.com/">Chicago City Clerk Susana Mendoza</a> and Seamus Kraft, Executive Director of <a href="http://www.opengovfoundation.org/">The OpenGov Foundation</a> will review and select a winner for each participating ward. Be sure to be thoughtful, thorough and creative!
-					</p>
-					<p>
-					<strong>When are the winners announced?</strong>
-					</p>
-					<p>
-					The winners will be announced on or before June 1, 2016.
 					</p>
 					<p>
 					<strong>Can my friend post a comment?</strong>
@@ -155,12 +134,6 @@ $content->set('body',
 					Stay tuned to The OpenGov Foundation’s <a href="https://twitter.com/FoundOpenGov">Twitter</a> and <a href="https://www.facebook.com/Opengovfoundation/">Facebook account</a> for more news about the Envision Chicago initiative and other work in Chicago.
 					</p>
 					<p>
-					<strong>Where do the $1,000 scholarships come from?</strong>
-					</p>
-					<p>
-					The scholarships come from generous support by Microsoft Chicago, The Smart Chicago Collaborative, Haymarket and [TO BE FILLED IN].
-					</p>
-					<p>
 					<strong>I have another question.</strong>
 					</p>
 					<p>
@@ -191,13 +164,18 @@ $content->set('body',
 					</ul>
 
 					<p>
-					<strong>Envision Chicago Sponsors & Supporters</strong>
+					<strong>Envision Chicago Sponsors</strong>
 					</p>
 					<ul>
 						<li><a href="http://microsoft-chicago.com/">Microsoft Chicago</a></li>
 						<li><a href="http://www.smartchicagocollaborative.org/">The Smart Chicago Collaborative</a></li>
 						<li><a href="http://www.haymarket.net/">Haymarket</a></li>
 						<li>[Sponsor logo and link #4]</li>
+					</ul>
+					<p>
+					<strong>Envision Chicago Supporters</strong>
+					</p>
+					<ul>
 						<li><a href="http://www.mikvachallenge.org/">Mikva Challenge</a></li>
 						<li><a href="http://www.chipublib.org/">Chicago Public Library</a></li>
 						<li><a href="http://www.1871.com/">1871</a></li>

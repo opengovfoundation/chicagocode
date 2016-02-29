@@ -211,16 +211,6 @@ if(isset($law->history) && $law->history) {
  */
 $body .= '</article>';
 
-/** Envision Chicago */
-$body .= '<section>
-	<h2>Envision Chicago</h2>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac scelerisque sem, a pellentesque urna. Nam ac aliquet sem. Phasellus vel eros nisl. Sed dapibus eu dolor in congue. Nulla placerat, orci eu facilisis varius, nibh velit scelerisque augue, pharetra ornare nunc arcu vel magna. Sed vel eleifend neque. Praesent eleifend odio quis nisi consectetur vulputate. Suspendisse vestibulum nisl ut interdum laoreet.  <a href="/envision/">Read more about Envision Chicago.</a>
-	</p>
-	<p>
-		<a class="btn btn-success" href="https://docs.google.com/forms/d/1IH1LUdPYB8lYCLTLS5YMNMd7Rg5EId0Xt_ZZ4sCixvg/viewform?entry.854504825&entry.103466807&entry.45758193&entry.803685449=' . $law->section_number . '&entry.1971567928='. SITE_URL . $law->url . '&entry.1728487902&entry.915672546&entry.552563733&entry.949223616">Envision This Law</a>
-	</p>';
-
 
 /** End Envision Chicago */
 
@@ -245,6 +235,16 @@ $body .= '
  * Establish the $sidebar variable, so that we can append to it in conditionals.
  */
 $sidebar = '';
+
+/** Envision Chicago */
+$sidebar .= '<section class="info-box header-bar-full">
+	<h2>Envision Chicago</h2>
+	<p>
+		Four schools in four Chicago wards are participating in a $1,000 scholarship contest to redesign the rules of the city! <a href="/envision/">Read more about Envision Chicago.</a> If you’re a qualifying student with an idea to improve this law, click below to complete your submission.
+	</p>
+	<p>
+		<a class="btn btn-success" target="_blank" href="https://docs.google.com/forms/d/1IH1LUdPYB8lYCLTLS5YMNMd7Rg5EId0Xt_ZZ4sCixvg/viewform?entry.854504825&entry.103466807&entry.45758193&entry.803685449=' . $law->section_number . '&entry.1971567928='. SITE_URL . $law->url . '&entry.1728487902&entry.915672546&entry.552563733&entry.949223616">Envision This Law</a>
+	</p></section>';
 
 /*
  * Commenting functionality.
