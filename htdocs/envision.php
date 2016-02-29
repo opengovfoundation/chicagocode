@@ -56,11 +56,11 @@ $content->set('body',
 				Find the Laws You Care About! Now that you have a vision for improving city life, visit ChicagoCode.org. Browse and search through the laws to find what you care about most. Here are a few topics to get started:
 				</p>
 				<ul style="margin-left: 60px">
-					<li><a href="http://chicagocode.org/7/">Health and Safety</a></li>
-					<li><a href="http://chicagocode.org/9/">Transportation</a></li>
-					<li><a href="http://chicagocode.org/4/">Consumer Protection</a></li>
-					<li><a href="http://chicagocode.org/2-45-115/">2015 Affordable Housing Requirements</a></li>
-					<li><a href="http://chicagocode.org/5/5-8/">Fair Housing</a></li>
+					<li><a href="/7/">Health and Safety</a></li>
+					<li><a href="/9/">Transportation</a></li>
+					<li><a href="/4/">Consumer Protection</a></li>
+					<li><a href="/2-45-115/">2015 Affordable Housing Requirements</a></li>
+					<li><a href="/5/5-8/">Fair Housing</a></li>
 				</ul>
 				<p>
 				Rewrite the Rules! See how the law is written with ChicagoCode.org. Decide how you'd improve it. Tell us why this matters to you and your community. Share your ideas with the alderman who represents you on the Chicago City Council by April 15. There is NO LIMIT to how many ideas you can enter to win the $1,000 scholarship! Submit your idea by clicking the "Envision This Law" at the bottom of each law or by <a href="https://docs.google.com/a/opengovfoundation.org/forms/d/1IH1LUdPYB8lYCLTLS5YMNMd7Rg5EId0Xt_ZZ4sCixvg/viewform">filling out this form</a>.
