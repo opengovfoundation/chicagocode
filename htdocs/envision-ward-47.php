@@ -45,7 +45,7 @@ $content->set('body',
 					<h2>Envision A Better Chicago</h2>
 				</hgroup>
 				<p>
-				<strong>Hello Lake View High School! Welcome to the Envision Chicago scholarship contest!</strong>
+				<strong>Hello Lake View High School! Welcome to the <a href="/envision/">Envision Chicago</a> scholarship contest!</strong>
 				</p>
 				<p>
 				Here’s how you can participate:
@@ -71,10 +71,11 @@ $content->set('body',
 
 				<article style="width: 300px; margin-left: 30px;">
 
-					<img src="http://placehold.it/300x300?text=Ward+Map" style="margin-bottom: 2rem;">
+					<img src="/themes/ChicagoCode2013/static/images/ward47.jpg">
+					<div style="font-size: 12px; text-align: center; margin-bottom: 2rem;">Ward map via <a href="https://chicago.councilmatic.org/council-members/">Chicago Councilmatic</a></div>
 
 					<img src="http://placehold.it/300x400?text=Alderman Photo" style="">
-					<span>Alderman Ameya Pawar</span>
+					<div style="text-align: center;">Alderman Ameya Pawar</div>
 
 				</article>
 

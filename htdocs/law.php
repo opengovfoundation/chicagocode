@@ -237,14 +237,14 @@ $body .= '
 $sidebar = '';
 
 /** Envision Chicago */
-// $sidebar .= '<section class="info-box header-bar-full">
-// 	<h2>Envision Chicago</h2>
-// 	<p>
-// 		Four schools in four Chicago wards are participating in a $1,000 scholarship contest to redesign the rules of the city! <a href="/envision/">Read more about Envision Chicago.</a> If you’re a qualifying student with an idea to improve this law, click below to complete your submission.
-// 	</p>
-// 	<p>
-// 		<a class="btn btn-success" target="_blank" href="https://docs.google.com/forms/d/1IH1LUdPYB8lYCLTLS5YMNMd7Rg5EId0Xt_ZZ4sCixvg/viewform?entry.854504825&entry.103466807&entry.45758193&entry.803685449=' . $law->section_number . '&entry.1971567928='. SITE_URL . $law->url . '&entry.1728487902&entry.915672546&entry.552563733&entry.949223616">Envision This Law</a>
-// 	</p></section>';
+$sidebar .= '<section class="info-box header-bar-full">
+	<h2>Envision Chicago</h2>
+	<p>
+		Four schools in four Chicago wards are participating in a $1,000 scholarship contest to redesign the rules of the city! <a href="/envision/">Read more about Envision Chicago.</a> If you’re a qualifying student with an idea to improve this law, click below to complete your submission.
+	</p>
+	<p>
+		<a class="btn btn-success" target="_blank" href="https://docs.google.com/forms/d/1IH1LUdPYB8lYCLTLS5YMNMd7Rg5EId0Xt_ZZ4sCixvg/viewform?entry.854504825&entry.103466807&entry.45758193&entry.803685449=' . $law->section_number . '&entry.1971567928='. SITE_URL . $law->url . '&entry.1728487902&entry.915672546&entry.552563733&entry.949223616">Envision This Law</a>
+	</p></section>';
 
 /*
  * Commenting functionality.

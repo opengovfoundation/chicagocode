@@ -45,7 +45,7 @@ $content->set('body',
 					<h2>Envision A Better Chicago</h2>
 				</hgroup>
 				<p>
-				<strong>Hello Marine Leadership Academy! Welcome to the Envision Chicago scholarship contest!</strong>
+				<strong>Hello Marine Leadership Academy! Welcome to the <a href="/envision/">Envision Chicago</a> scholarship contest!</strong>
 				</p>
 				<p>
 				Here’s how you can participate:
@@ -54,7 +54,7 @@ $content->set('body',
 				Imagine a Better Chicago! Think about what you like best - and like least - about living in Chicago. What issues do you care about? What do you see in your neighborhood, in your ward and in your school that could be improved? Odds are, there's a law to match. How would you fix what you don't like or build on what you do?
 				</p>
 				<p>
-				Find the Laws You Care About! Now that you have a vision for improving city life, visit ChicagoCode.org. Browse and search through the laws to find what you care about most.
+				Find the Laws You Care About! Now that you have a vision for improving city life, visit ChicagoCode.org. <a href="/browse/">Browse and search through the laws</a> to find what you care about most.
 				</p>
 				<p>
 				Rewrite the Rules! See how the law is written with ChicagoCode.org. Decide how you'd improve it. Tell us why this matters to you and your community. Share your ideas with the alderman who represents you on the Chicago City Council by April 15. There is NO LIMIT to how many ideas you can enter to win the $1,000 scholarship! Submit your idea by clicking the “Envision This Law” at the bottom of each law or by <a href="https://docs.google.com/a/opengovfoundation.org/forms/d/1IH1LUdPYB8lYCLTLS5YMNMd7Rg5EId0Xt_ZZ4sCixvg/viewform">filling out this form</a>.
@@ -71,10 +71,11 @@ $content->set('body',
 
 				<article style="width: 300px; margin-left: 30px;">
 
-					<img src="http://placehold.it/300x300?text=Ward+Map" style="margin-bottom: 2rem;">
+					<img src="/themes/ChicagoCode2013/static/images/ward26.jpg">
+					<div style="font-size: 12px; text-align: center; margin-bottom: 2rem;">Ward map via <a href="https://chicago.councilmatic.org/council-members/">Chicago Councilmatic</a></div>
 
 					<img src="http://placehold.it/300x400?text=Alderman Photo" style="">
-					<span>Alderman Roberto Maldonado</span>
+					<div style="text-align: center;">Alderman Roberto Maldonado</div>
 
 				</article>
 
