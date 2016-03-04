@@ -69,7 +69,7 @@ $content->set('body',
 
 			<section class="secondary-content">
 
-				<article style="width: 300px; margin-left: 30px;">
+				<article class="abstract">
 
 					<img src="/themes/ChicagoCode2013/static/images/ward47.jpg">
 					<div style="font-size: 12px; text-align: center; margin-bottom: 2rem;">Ward map via <a href="https://chicago.councilmatic.org/council-members/">Chicago Councilmatic</a></div>
@@ -77,6 +77,45 @@ $content->set('body',
 					<img src="http://placehold.it/300x400?text=Alderman Photo" style="">
 					<div style="text-align: center;">Alderman Ameya Pawar</div>
 
+				</article>
+
+				<article class="abstract">
+
+					<p>
+					<strong>Important Dates</strong>
+					</p>
+					<ul>
+					<li>March 11, 2016 &mdash; Competition begins</li>
+					<li>April 15, 2016 &mdash; Submissions Deadline</li>
+					<li>June 1, 2016 &mdash; Winners Announced</li>
+					</ul>
+
+					<p>
+					<strong>Resources</strong>
+					</p>
+					<ul>
+						<li><a href="http://www.cityofchicago.org/city/en/about/council.html">How City Council Works</a> (via The City of Chicago’s Official Site)</li>
+						<li><a href="http://www.chicityclerk.com/">Office of the City Clerk</a> (via City of Chicago, Office of the City Clerk)</li>
+						<li><a href="http://www.mikvachallenge.org/educators/opportunities-for-students/">Center for Action Civics: Opportunities for Youth</a> (via Mikva Challenge)</li>
+						<li><a href="http://cps.edu/pages/timeline.aspx#g912pic">Chicago Public School High School Resources</a> (via Chicago Public Schools) </li>
+					</ul>
+					<p>
+					<strong>Envision Chicago Sponsors</strong>
+					</p>
+					<ul>
+						<li><a href="http://microsoft-chicago.com/">Microsoft Chicago</a></li>
+						<li><a href="http://www.smartchicagocollaborative.org/">The Smart Chicago Collaborative</a></li>
+						<li><a href="http://www.haymarket.net/">Haymarket</a></li>
+						<li><a href="https://www.comed.com/">ComEd</a></li>
+					</ul>
+					<p>
+					<strong>Envision Chicago Supporters</strong>
+					</p>
+					<ul>
+						<li><a href="http://www.mikvachallenge.org/">Mikva Challenge</a></li>
+						<li><a href="http://www.chipublib.org/">Chicago Public Library</a></li>
+						<li><a href="http://www.1871.com/">1871</a></li>
+					</ul>
 				</article>
 
 			</section> <!-- // .secondary-content -->
