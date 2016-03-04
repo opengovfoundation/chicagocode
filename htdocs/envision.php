@@ -39,7 +39,7 @@ $content->set('body',
 					We'll be kicking off the project from 2-3pm on Friday, March 11th at 1871 Chicago.
 				</p>
 				<p>
-					<a href="https://envisionchicago.splashthat.com/">RSVP on Splash</a>
+					<a class="btn btn-success" href="https://envisionchicago.splashthat.com/">RSVP on Splash</a>
 				</p>
 			</section> <!-- // .feature -->
 
