@@ -74,8 +74,9 @@ $content->set('body',
 				</p>
 				Make an impact. Win a scholarship. Envision Chicago.
 				</p>
-
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/YOsD64MuoUQ" frameborder="0" allowfullscreen></iframe>
+				<div style="text-align: center">`
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/YOsD64MuoUQ" frameborder="0" allowfullscreen></iframe>
+				</div>
 
 			</section> <!-- // .feature -->
 
