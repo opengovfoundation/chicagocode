@@ -137,7 +137,7 @@ $content->set('body',
 					<strong>I have another question.</strong>
 					</p>
 					<p>
-					We’re here to answer your questions on Envision Chicago, ChicagoCode.org, how the City Council works...anything! Email us at <a href="mailto:support@opengovfoundation.org">support@opengovfoundation.org</a>, tweet at us at <a href="https://twitter.com/FoundOpenGov">@FoundOpenGov</a>, or call or text questions to: [PHONE NUMBER].
+					We’re here to answer your questions on Envision Chicago, ChicagoCode.org, how the City Council works...anything! Email us at <a href="mailto:support@opengovfoundation.org">support@opengovfoundation.org</a> or tweet at us at <a href="https://twitter.com/FoundOpenGov">@FoundOpenGov</a>.
 					</p>
 
 				</article>
