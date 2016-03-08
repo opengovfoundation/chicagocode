@@ -20,7 +20,7 @@ class ChicagoCode2013__Page extends Page
 
 	public $assets = array(
 		'font_awesome_css' => array(
-			'path' => '//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css',
+			'path' => '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css',
 			'type' => 'css'
 		),
 		'main_css' => array(

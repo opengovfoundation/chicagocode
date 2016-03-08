@@ -233,7 +233,7 @@
             .lt-ie9 & {
               @include background-image(image-url("nav-icons/fallbacks/nav_court-cases.png"));
             }
-          } // &#browse
+          } // &#court_cases
 
           &#about {
             @include background-image(image-url("nav-icons/nav_about-us.svg"));
@@ -244,7 +244,7 @@
             .lt-ie9 & {
               @include background-image(image-url("nav-icons/fallbacks/nav_about-us.png"));
             }
-          } // &#browse
+          } // &#about
 
           &#downloads {
             @include background-image(image-url("nav-icons/nav_downloads.svg"));
@@ -254,7 +254,15 @@
             .lt-ie9 & {
               @include background-image(image-url("nav-icons/fallbacks/nav_downloads.png"));
             }
-          } // &#browse
+          } // &#downloads
+
+          &#envision {
+            @include background-image(image-url("nav-icons/nav_envision.png"));
+            &:hover {
+              @include background-image(image-url("nav-icons/nav_envision-hover.png"));
+            }
+          } // &#envision
+
         } // a
       } // li
     } // ul

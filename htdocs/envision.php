@@ -25,26 +25,29 @@ $content->set('page_title', '');
 
 $content->set('body',
 <<<EOT
-	<section class="homepage" role="main">
+	<section class="homepage" role="main" style="width: 80%; margin: 0 auto;">
 		<div class="nest">
-			<section class="feature-content">
+			<section style="width: 65%; float: left;">
 				<hgroup>
 					<h1>Envision Chicago</h1>
 					<h2>Students Building A Better Chicago</h2>
 				</hgroup>
-				<img src="/themes/ChicagoCode2013/static/images/envision_logo_lofi.png"
-					style="float: right; margin: 15px;">
+
+				<div style="text-align: center">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/YOsD64MuoUQ" frameborder="0" allowfullscreen></iframe>
+				</div>
+
 				<p>
 				Chicago is your city.  How would you make it even better?
 				</p>
 				<p>
-				Find an issue you care about.
+				<i class="fa fa-search" style="font-size: 26px; color: #105c80; vertical-align: middle; text-align: center; width: 30px;"></i> Find an issue you care about.
 				</p>
 				<p>
-				Submit your ideas by April 15.
+				<i class="fa fa-lightbulb-o" style="font-size: 30px; color: #105c80; vertical-align: middle; text-align: center; width: 30px;"></i> Submit your ideas by April 15.
 				</p>
 				<p>
-				Earn a shot at a $1,000 scholarship and your idea going before the Chicago City Council.
+				<i class="fa fa-bank" style="font-size: 24px; color: #105c80; vertical-align: middle; text-align: center; width: 30px;"></i> Earn a shot at a $1,000 scholarship and your idea going before the Chicago City Council.
 				</p>
 				<p>
 				Here's how Envision Chicago works:
@@ -74,17 +77,69 @@ $content->set('body',
 				</p>
 				Make an impact. Win a scholarship. Envision Chicago.
 				</p>
-				<div style="text-align: center">`
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/YOsD64MuoUQ" frameborder="0" allowfullscreen></iframe>
-				</div>
 
 			</section> <!-- // .feature -->
 
-			<section class="secondary-content">
+			<section style="width: 35%; float: left; padding-left: 30px;">
 
-				<article class="abstract">
+				<article>
+					<div style="text-align: center;">
+						<img src="/themes/ChicagoCode2013/static/images/envision_logo_lofi.png">
+					</div>
 
-					<h3>Questions and Answers</h3>
+					<p>
+					<strong>Participating Schools</strong>
+					</p>
+					<ul>
+					<li><a href="/envision/ward-26/">Ward 26 - Marine Leadership Academy at Ames</a></li>
+					<li><a href="/envision/ward-34/">Ward 34 - Chicago Excel Academy of Roseland</a></li>
+					<li><a href="/envision/ward-41/">Ward 41 - Taft High School</a></li>
+					<li><a href="/envision/ward-47/">Ward 47 - Lake View High School</a></li>
+					</ul>
+
+					<p>
+					<strong>Important Dates</strong>
+					</p>
+					<ul>
+					<li>March 11, 2016 &mdash; Competition begins</li>
+					<li>April 15, 2016 &mdash; Submissions Deadline</li>
+					<li>June 1, 2016 &mdash; Winners Announced</li>
+					</ul>
+
+					<p>
+					<strong>Resources</strong>
+					</p>
+					<ul>
+						<li><a href="http://www.cityofchicago.org/city/en/about/council.html">How City Council Works</a> (via The City of Chicago’s Official Site)</li>
+						<li><a href="http://www.chicityclerk.com/">Office of the City Clerk</a> (via City of Chicago, Office of the City Clerk)</li>
+						<li><a href="http://www.mikvachallenge.org/educators/opportunities-for-students/">Center for Action Civics: Opportunities for Youth</a> (via Mikva Challenge)</li>
+						<li><a href="http://cps.edu/pages/timeline.aspx#g912pic">Chicago Public School High School Resources</a> (via Chicago Public Schools) </li>
+					</ul>
+					<p>
+					<strong>Envision Chicago Sponsors</strong>
+					</p>
+					<ul>
+						<li><a href="http://microsoft-chicago.com/">Microsoft Chicago</a></li>
+						<li><a href="http://www.smartchicagocollaborative.org/">The Smart Chicago Collaborative</a></li>
+						<li><a href="http://www.haymarket.net/">Haymarket</a></li>
+						<li><a href="https://www.comed.com/">ComEd</a></li>
+					</ul>
+					<p>
+					<strong>Envision Chicago Supporters</strong>
+					</p>
+					<ul>
+						<li><a href="http://www.mikvachallenge.org/">Mikva Challenge</a></li>
+						<li><a href="http://www.chipublib.org/">Chicago Public Library</a></li>
+						<li><a href="http://www.1871.com/">1871</a></li>
+					</ul>
+				</article>
+
+			</section> <!-- // .secondary-content -->
+
+			<section style="width: 100%; float: left;"> <!-- faq -->
+				<article>
+
+					<h2>Questions and Answers</h2>
 
 					<p>
 					<strong>How do I submit an idea?</strong>
@@ -142,57 +197,7 @@ $content->set('body',
 					</p>
 
 				</article>
-
-				<article class="abstract">
-
-					<p>
-					<strong>Participating Schools</strong>
-					</p>
-					<ul>
-					<li><a href="/envision/ward-26/">Ward 26 - Marine Leadership Academy at Ames</a></li>
-					<li><a href="/envision/ward-34/">Ward 34 - Chicago Excel Academy of Roseland</a></li>
-					<li><a href="/envision/ward-41/">Ward 41 - Taft High School</a></li>
-					<li><a href="/envision/ward-47/">Ward 47 - Lake View High School</a></li>
-					</ul>
-
-					<p>
-					<strong>Important Dates</strong>
-					</p>
-					<ul>
-					<li>March 11, 2016 &mdash; Competition begins</li>
-					<li>April 15, 2016 &mdash; Submissions Deadline</li>
-					<li>June 1, 2016 &mdash; Winners Announced</li>
-					</ul>
-
-					<p>
-					<strong>Resources</strong>
-					</p>
-					<ul>
-						<li><a href="http://www.cityofchicago.org/city/en/about/council.html">How City Council Works</a> (via The City of Chicago’s Official Site)</li>
-						<li><a href="http://www.chicityclerk.com/">Office of the City Clerk</a> (via City of Chicago, Office of the City Clerk)</li>
-						<li><a href="http://www.mikvachallenge.org/educators/opportunities-for-students/">Center for Action Civics: Opportunities for Youth</a> (via Mikva Challenge)</li>
-						<li><a href="http://cps.edu/pages/timeline.aspx#g912pic">Chicago Public School High School Resources</a> (via Chicago Public Schools) </li>
-					</ul>
-					<p>
-					<strong>Envision Chicago Sponsors</strong>
-					</p>
-					<ul>
-						<li><a href="http://microsoft-chicago.com/">Microsoft Chicago</a></li>
-						<li><a href="http://www.smartchicagocollaborative.org/">The Smart Chicago Collaborative</a></li>
-						<li><a href="http://www.haymarket.net/">Haymarket</a></li>
-						<li><a href="https://www.comed.com/">ComEd</a></li>
-					</ul>
-					<p>
-					<strong>Envision Chicago Supporters</strong>
-					</p>
-					<ul>
-						<li><a href="http://www.mikvachallenge.org/">Mikva Challenge</a></li>
-						<li><a href="http://www.chipublib.org/">Chicago Public Library</a></li>
-						<li><a href="http://www.1871.com/">1871</a></li>
-					</ul>
-				</article>
-
-			</section> <!-- // .secondary-content -->
+			</section> <!-- // faq -->
 
 		</div> <!-- // .nest -->
 
