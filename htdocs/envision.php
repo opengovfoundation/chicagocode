@@ -25,9 +25,26 @@ $content->set('page_title', '');
 
 $content->set('body',
 <<<EOT
-	<section class="homepage" role="main" style="width: 80%; margin: 0 auto;">
+<style>
+@media only screen and (min-width: 1200px) {
+	.envision-main {
+		width: 80%;
+		margin: 0 auto;
+	}
+	.envision-content {
+		width: 65%;
+		float: left;
+	}
+	.envision-sidebar {
+		width: 35%;
+		float: left;
+		padding-left: 30px;
+	}
+}
+</style>
+	<section class="homepage envision-main" role="main">
 		<div class="nest">
-			<section style="width: 65%; float: left;">
+			<section class="envision-content">
 				<hgroup>
 					<h1>Envision Chicago</h1>
 					<h2>Students Building A Better Chicago</h2>
@@ -80,7 +97,7 @@ $content->set('body',
 
 			</section> <!-- // .feature -->
 
-			<section style="width: 35%; float: left; padding-left: 30px;">
+			<section class="envision-sidebar">
 
 				<article>
 					<div style="text-align: center;">
