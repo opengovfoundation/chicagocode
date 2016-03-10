@@ -57,7 +57,7 @@ $content->set('body',
 				Find the Laws You Care About! Now that you have a vision for improving city life, visit ChicagoCode.org. <a href="/browse/">Browse and search through the laws</a> to find what you care about most.
 				</p>
 				<p>
-				Rewrite the Rules! See how the law is written with ChicagoCode.org. Decide how you'd improve it. Tell us why this matters to you and your community. Share your ideas with the alderman who represents you on the Chicago City Council by April 15. There is NO LIMIT to how many ideas you can enter to win the $1,000 scholarship! Submit your idea by clicking the “Envision This Law” at the bottom of each law or by <a href="https://docs.google.com/a/opengovfoundation.org/forms/d/1IH1LUdPYB8lYCLTLS5YMNMd7Rg5EId0Xt_ZZ4sCixvg/viewform">filling out this form</a>.
+				Rewrite the Rules! See how the law is written with ChicagoCode.org. Decide how you'd improve it. Tell us why this matters to you and your community. Share your ideas with the alderman who represents you on the Chicago City Council by April 15. There is NO LIMIT to how many ideas you can enter to win the $1,000 scholarship! Submit your idea by clicking “Envision This Law” at the bottom of each law or by <a href="https://docs.google.com/a/opengovfoundation.org/forms/d/1IH1LUdPYB8lYCLTLS5YMNMd7Rg5EId0Xt_ZZ4sCixvg/viewform">filling out this form</a>.
 				</p>
 				<p>
 				What Happens Next?
@@ -71,11 +71,18 @@ $content->set('body',
 
 				<article class="abstract">
 
-					<img src="/themes/ChicagoCode2013/static/images/ward26.jpg">
+					<img src="/themes/ChicagoCode2013/static/images/ward26.jpg" style="max-width: 100%" alt="Map of Ward 26">
 					<div style="font-size: 12px; text-align: center; margin-bottom: 2rem;">Ward map via <a href="https://chicago.councilmatic.org/council-members/">Chicago Councilmatic</a></div>
 
-					<img src="http://placehold.it/300x400?text=Alderman Photo" style="">
-					<div style="text-align: center;">Alderman Roberto Maldonado</div>
+					<img src="/themes/ChicagoCode2013/static/images/26th-Ward-Alderman-Roberto-Maldonado.jpg" style="max-width: 100%" alt="Photo of Alderman Roberto Maldonado">
+					<p style="font-size: 12px; color: #777">
+						<span style="font-size: 24px; line-height: 12px; position: relative; top: 6px;">&ldquo;</span>
+						Chicago's youth often feels as if they are disconnected from the laws that govern our city. Envision Chicago gives students a chance to experience legislation with ease. It also provides them with the opportunity to use technology in a way that may show us a thing or two.
+						<span style="font-size: 24px; line-height: 12px; position: relative; top: 6px;">&rdquo;</span>
+					</p>
+					<p style="font-size: 12px; text-align: right;">
+						&mdash; Alderman Roberto Maldonado
+					</p>
 
 				</article>
 
@@ -107,6 +114,7 @@ $content->set('body',
 						<li><a href="http://www.smartchicagocollaborative.org/">The Smart Chicago Collaborative</a></li>
 						<li><a href="http://www.haymarket.net/">Haymarket</a></li>
 						<li><a href="https://www.comed.com/">ComEd</a></li>
+						<li><a href="http://comcast.com">Comcast</a></li>
 					</ul>
 					<p>
 					<strong>Envision Chicago Supporters</strong>

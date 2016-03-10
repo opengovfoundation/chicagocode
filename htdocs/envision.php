@@ -83,7 +83,7 @@ $content->set('body',
 					<li><a href="/5/5-8/">Fair Housing</a></li>
 				</ul>
 				<p>
-				Rewrite the Rules! See how the law is written with ChicagoCode.org. Decide how you'd improve it. Tell us why this matters to you and your community. Share your ideas with the alderman who represents you on the Chicago City Council by April 15. There is NO LIMIT to how many ideas you can enter to win the $1,000 scholarship! Submit your idea by clicking the "Envision This Law" at the bottom of each law or by <a href="https://docs.google.com/a/opengovfoundation.org/forms/d/1IH1LUdPYB8lYCLTLS5YMNMd7Rg5EId0Xt_ZZ4sCixvg/viewform">filling out this form</a>.
+				Rewrite the Rules! See how the law is written with ChicagoCode.org. Decide how you'd improve it. Tell us why this matters to you and your community. Share your ideas with the alderman who represents you on the Chicago City Council by April 15. There is NO LIMIT to how many ideas you can enter to win the $1,000 scholarship! Submit your idea by clicking "Envision This Law" at the bottom of each law or by <a href="https://docs.google.com/a/opengovfoundation.org/forms/d/1IH1LUdPYB8lYCLTLS5YMNMd7Rg5EId0Xt_ZZ4sCixvg/viewform">filling out this form</a>.
 				<p>
 				</p>
 				What Happens Next?
@@ -140,6 +140,7 @@ $content->set('body',
 						<li><a href="http://www.smartchicagocollaborative.org/">The Smart Chicago Collaborative</a></li>
 						<li><a href="http://www.haymarket.net/">Haymarket</a></li>
 						<li><a href="https://www.comed.com/">ComEd</a></li>
+						<li><a href="http://comcast.com">Comcast</a></li>
 					</ul>
 					<p>
 					<strong>Envision Chicago Supporters</strong>
@@ -162,7 +163,7 @@ $content->set('body',
 					<strong>How do I submit an idea?</strong>
 					</p>
 					<p>
-					Submit your idea by clicking the "Envision This Law" at the bottom of each law or by <a href="https://docs.google.com/a/opengovfoundation.org/forms/d/1IH1LUdPYB8lYCLTLS5YMNMd7Rg5EId0Xt_ZZ4sCixvg/viewform">filling out this form</a>.
+					Submit your idea by clicking "Envision This Law" at the bottom of each law or by <a href="https://docs.google.com/a/opengovfoundation.org/forms/d/1IH1LUdPYB8lYCLTLS5YMNMd7Rg5EId0Xt_ZZ4sCixvg/viewform">filling out this form</a>.
 					</p>
 					<p>
 					<strong>How many ideas can I submit to win a $1,000 scholarship?</strong>

@@ -57,7 +57,7 @@ $content->set('body',
 				Find the Laws You Care About! Now that you have a vision for improving city life, visit ChicagoCode.org. <a href="/browse/">Browse and search through the laws</a> to find what you care about most.
 				</p>
 				<p>
-				Rewrite the Rules! See how the law is written with ChicagoCode.org. Decide how you'd improve it. Tell us why this matters to you and your community. Share your ideas with the alderman who represents you on the Chicago City Council by April 15. There is NO LIMIT to how many ideas you can enter to win the $1,000 scholarship! Submit your idea by clicking the “Envision This Law” at the bottom of each law or by <a href="https://docs.google.com/a/opengovfoundation.org/forms/d/1IH1LUdPYB8lYCLTLS5YMNMd7Rg5EId0Xt_ZZ4sCixvg/viewform">filling out this form</a>.
+				Rewrite the Rules! See how the law is written with ChicagoCode.org. Decide how you'd improve it. Tell us why this matters to you and your community. Share your ideas with the alderman who represents you on the Chicago City Council by April 15. There is NO LIMIT to how many ideas you can enter to win the $1,000 scholarship! Submit your idea by clicking “Envision This Law” at the bottom of each law or by <a href="https://docs.google.com/a/opengovfoundation.org/forms/d/1IH1LUdPYB8lYCLTLS5YMNMd7Rg5EId0Xt_ZZ4sCixvg/viewform">filling out this form</a>.
 				</p>
 				<p>
 				What Happens Next?
@@ -71,11 +71,18 @@ $content->set('body',
 
 				<article class="abstract">
 
-					<img src="/themes/ChicagoCode2013/static/images/ward41.jpg">
+					<img src="/themes/ChicagoCode2013/static/images/ward41.jpg" style="max-width: 100%" alt="Map of Ward 41">
 					<div style="font-size: 12px; text-align: center; margin-bottom: 2rem;">Ward map via <a href="https://chicago.councilmatic.org/council-members/">Chicago Councilmatic</a></div>
 
-					<img src="http://placehold.it/300x400?text=Alderman Photo" style="">
-					<div style="text-align: center;">Alderman Anthony Napolitano</div>
+					<img src="/themes/ChicagoCode2013/static/images/41st-Ward-Alderman-Anthony-Napolitano.jpg" style="max-width: 100%" alt="Photo of Alderman Anthony Napolitano">
+					<p style="font-size: 12px; color: #777">
+						<span style="font-size: 24px; line-height: 12px; position: relative; top: 6px;">&ldquo;</span>
+						It is important that we encourage our City’s youth to participate in local government. Envision Chicago is a great way to spark their interest. They will have the opportunity to work directly with the laws that affect them most. You never know, this hands-on approach may even inspire a future alderman.
+						<span style="font-size: 24px; line-height: 12px; position: relative; top: 6px;">&rdquo;</span>
+					</p>
+					<p style="font-size: 12px; text-align: right;">
+						&mdash; Alderman Anthony Napolitano
+					</p>
 
 				</article>
 
@@ -107,6 +114,7 @@ $content->set('body',
 						<li><a href="http://www.smartchicagocollaborative.org/">The Smart Chicago Collaborative</a></li>
 						<li><a href="http://www.haymarket.net/">Haymarket</a></li>
 						<li><a href="https://www.comed.com/">ComEd</a></li>
+						<li><a href="http://comcast.com">Comcast</a></li>
 					</ul>
 					<p>
 					<strong>Envision Chicago Supporters</strong>
