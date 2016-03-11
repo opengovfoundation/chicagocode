@@ -29,7 +29,7 @@ Router::addRoute('^/envision/ward-26/?(.*)', 'envision-ward-26.php');
 Router::addRoute('^/envision/ward-34/?(.*)', 'envision-ward-34.php');
 Router::addRoute('^/envision/ward-41/?(.*)', 'envision-ward-41.php');
 Router::addRoute('^/envision/ward-47/?(.*)', 'envision-ward-47.php');
-Router::addRoute('^/envision/?(.*)', 'envision.php');
+Router::addRoute('^/[Ee]nvision/?(.*)', 'envision.php');
 Router::addRoute('^/nicko-is-the-best/?(.*)', 'envision.php');
 
 // Browse
